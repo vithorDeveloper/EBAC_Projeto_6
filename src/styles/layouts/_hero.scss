@@ -1,0 +1,58 @@
+@use "../variaveis/variaveis";
+
+.hero {
+    padding: 5.6vw;
+    min-height: 100vh;
+    background-image: url(../images/hero_desktop.jpeg);
+    text-align: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+    &__content {
+        max-width: 40rem;
+
+        &__branding {
+            margin-bottom:2rem;
+        }
+
+        .title--small {
+            margin-bottom: 3rem;
+        }
+
+        p {
+            margin-bottom: 2rem;
+
+            &:last-child {
+                margin-top: 3.75rem;
+            }
+        }
+
+        &__combos {
+            display: flex;
+            justify-content: space-between;
+
+            &__combo {
+                width: calc(50% - .75rem);
+
+                img {
+                    max-height: 3.75rem;
+                }
+
+                button {
+                    display: block;
+                    width: 100%;
+                    height: 3.75rem;
+                    font-size: 1.25rem;
+                    color: variaveis.$corTextoSecundario;
+                    background-color: #4834d4;
+                    text-transform: uppercase;
+                    border-radius: .25rem;
+                    border: none;
+                    margin-top: 2vh;
+                    margin-bottom: .5rem;
+                }
+            }
+        }
+    }
+}
