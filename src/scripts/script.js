@@ -1,6 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
   const buttons = document.querySelectorAll("[data-tab-button]")
   const items  = document.querySelectorAll("[data-faq-question]")
+  const hero = document.querySelector(".hero")
+
+  const alturaHero = hero.clientHeight
+
+  window.addEventListener("scroll", function() {
+    const alturaAtual = window.scrollY
+
+    if(alturaAtual < alturaHero) {
+      ocultarElementos()
+    }
+    else(
+      exibeElementos()
+    )
+  })
 
   for(let i = 0; i < buttons.length; i++){
     buttons[i].addEventListener("click", function(botao){
@@ -18,6 +32,16 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 })
+
+function ocultarElementos () {
+  const header = document.querySelector("header")
+  header.classList.add("header--is-hidden")
+}
+
+function exibeElementos () {
+  const header = document.querySelector("header")
+  header.classList.remove("header--is-hidden")
+}
 
 function abrirFecharPerguntas(elemento) {
   elementoPai = elemento.target.parentNode
