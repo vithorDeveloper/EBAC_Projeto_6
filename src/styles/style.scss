@@ -20,6 +20,10 @@ body{
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
+  @media (max-width: 768px) {
+    display: block;
+  }
+
   img {
     max-width: 100%;
   }
@@ -49,6 +53,12 @@ body{
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      @media (max-width: 768px) {
+        position: relative;
+        left: 0;
+        width: 100%;
+      }
     }
   }
 }
@@ -66,14 +76,26 @@ body{
 
 .text--big {
   @include text(1.25rem);
+
+  @media (max-width: 768px) {
+    @include text(1rem);
+  }
 }
 
 .text {
   @include text;
+
+  @media (max-width: 768px) {
+    @include text(0.9rem);
+  }
 }
 
 .text--small {
   @include text(1rem);
+
+  @media (max-width: 768px) {
+    @include text(0.8rem);
+  }
 }
 
 .link-text {
@@ -84,14 +106,26 @@ body{
 
 .title--big {
   @include title(2.75rem);
+
+  @media (max-width: 768px) {
+    @include title(1.6rem);
+  }
 }
 
 .title {
   @include title;
+
+  @media (max-width: 768px) {
+    @include title(1.5rem);
+  }
 }
 
 .title--small {
   @include title(1.75rem);
+
+  @media (max-width: 768px) {
+    @include title(1.4rem);
+  }
 }
 
 .button {

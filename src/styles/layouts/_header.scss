@@ -1,48 +1,63 @@
 @use '../variaveis/variaveis';
 
 .header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    background-color: variaveis.$corDeFundo;
-    transition: background-color .5s ease;
-    z-index: 1;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: variaveis.$corDeFundo;
+  transition: background-color .5s ease;
+  z-index: 1;
 
     &--is-hidden {
-        background-color: transparent;
+      background-color: transparent;
 
-        .header {
-            &__logo, &__links__item:first-child {
-                opacity: 0;
-                visibility: hidden;
-            }
+      .header {
+        &__logo, &__links__item:first-child {
+          opacity: 0;
+          visibility: hidden;
         }
+      }
     }
 
     &__container {
-        padding: .5rem 2.25rem;
-        display: flex;
-        justify-content: space-between;
+      padding: .5rem 2.25rem;
+      display: flex;
+      justify-content: space-between;
+
+        @media (max-width: 768px) {
+          padding: 0 .75rem 0 1.25rem;
+        }
     }
 
     &__logo {
-        max-width: 10rem;
-        width: 100%;
-        padding-top: 1.2rem;
-        transition: opacity .5s ease;
+      max-width: 10rem;
+      width: 100%;
+      padding-top: 1.2rem;
+      transition: opacity .5s ease;
+
+        @media (max-width: 768px) {
+          max-width: 4rem;
+        }
     }
 
     &__links {
-        display: flex;
-        list-style: none;
+      display: flex;
+      list-style: none;
 
         &__item {
-            margin: .25rem;
-            transition: opacity .5s ease;
+          margin: .25rem;
+          transition: opacity .5s ease;
         }
     }
 
     .button {
-        height: 3rem;
+      height: 3rem;
+
+        @media (max-width: 768px) {
+          font-size: .8rem;
+          padding: .5rem 0.70rem;
+          height: 2.5rem;
+          letter-spacing: 0;
+        }
     }
 }

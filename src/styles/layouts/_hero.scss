@@ -9,6 +9,14 @@
     display: flex;
     align-items: center;
 
+    @media (max-width: 768px) {
+        background-image: url(../images/hero_celular.jpeg);
+        padding-top: calc(50vw + 1.5rem);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: -3.5rem;
+    }
+
     .button {
         margin-top: 2vw;
         margin-bottom: .5rem;
@@ -19,6 +27,15 @@
 
         &__branding {
             margin-bottom:2rem;
+
+            @media (max-width: 768px) {
+                width: 18rem;
+                margin: 0 auto 2rem;
+
+                img{
+                    width: 100%;
+                }
+            }
         }
 
         .title--small {
@@ -37,8 +54,18 @@
             display: flex;
             justify-content: space-between;
 
+            @media (max-width: 768px) {
+                display: block;
+                margin-bottom: -2rem;
+            }
+
             &__combo {
                 width: calc(50% - .75rem);
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                    margin-bottom: 2.5rem;
+                }
 
                 img {
                     max-height: 3.75rem;
