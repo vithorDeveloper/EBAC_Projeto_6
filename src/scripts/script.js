@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   const buttons = document.querySelectorAll("[data-tab-button]")
+  const items  = document.querySelectorAll("[data-faq-question]")
 
   for(let i = 0; i < buttons.length; i++){
     buttons[i].addEventListener("click", function(botao){
@@ -11,7 +12,17 @@ document.addEventListener("DOMContentLoaded", function() {
       botao.target.classList.add("shows__tabs__button--is-active")
     })
   }
+
+  for(let i = 0; i < items.length; i++) {
+    items[i].addEventListener("click", abrirFecharPerguntas)
+  }
+
 })
+
+function abrirFecharPerguntas(elemento) {
+  elementoPai = elemento.target.parentNode
+  elementoPai.classList.toggle("faq__questions__item--is-open")
+}
 
 function removeBotaoAtivo() {
   const buttons = document.querySelectorAll("[data-tab-button]")
